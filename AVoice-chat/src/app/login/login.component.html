@@ -1,0 +1,15 @@
+<div>
+  <div class="imgcontainer">
+    <img src="../../assets/site_pic/logo.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label><b>Username</b></label>
+    <input #user type="text" placeholder="Enter Username" id="user" required>
+
+    <label><b>Password</b></label>
+    <input #pass type="password" placeholder="Enter Password" id="pass" required>
+
+    <button type="submit" (click)="loginRequest(user.value, pass.value)">Login</button>
+  </div>
+</div>

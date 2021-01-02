@@ -1,0 +1,21 @@
+<div>
+  <div class="imgcontainer">
+    <img src="../../assets/site_pic/aavatar.jpg" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label><b>Full name</b></label>
+    <input #fullname type="text" placeholder="Enter full name" id="fullname" required>
+
+    <label><b>Mail</b></label>
+    <input #mail type="text" placeholder="mail@xxx.com" id="mail" required>
+
+    <label><b>Username</b></label>
+    <input #user type="text" placeholder="Enter username" id="user" required>
+
+    <label><b>Password</b></label>
+    <input #pass type="password" placeholder="Enter password" id="pass" required>
+
+    <button type="submit" (click)="registerRequest(fullname.value, mail.value, user.value, pass.value)">Register</button>
+  </div>
+</div>

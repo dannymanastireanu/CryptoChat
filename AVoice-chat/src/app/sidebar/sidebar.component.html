@@ -1,0 +1,31 @@
+<div class="sidebar__header">
+    <mat-card class="user__profilepic">
+        <img mat-card-avatar src="../../assets/users_pic/img_avatar.png">
+    </mat-card>
+    <div class="sidebarChat__info" >
+        <h1>{{user.username}}</h1>
+    </div>
+    <div class="sidebar__headerRight">
+    </div>
+</div>
+
+<div class="sidebar__search">
+    <div class="sidebar__searchContainer">
+        <form #f="ngForm" (ngSubmit)="searchPerson(f)">
+            <input placeholder="Search or start a new chat" type="text" [value]="personNameSearchText" (input)="personNameSearchText=$event.target.value"/>
+            <button type="button">Send</button>
+        </form>
+    </div>
+</div>
+
+<div class="sidebar__chats">
+    <div *ngFor="let friend of friendsList">
+        <div class="sidebarChat" (click)="openConversation(friend)">
+            <img mat-card-avatar class="avatar" src="../../assets/users_pic/img_avatar.png" >
+            <div class="sidebarChat__info" >
+                <h2>{{friend.fullName}}</h2>
+                <p>{{friend.lastMessage}}</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+h1 {
+    color: rgb(14, 129, 239);
+    font-size: xx-large;
+    font-family: Monaco, "Lucida Console", monospace;
+}
+
+h1:hover {
+    color: gold;
+    opacity: 50%;
+    cursor: not-allowed;
+    text-shadow: #f6f6f6;
+}

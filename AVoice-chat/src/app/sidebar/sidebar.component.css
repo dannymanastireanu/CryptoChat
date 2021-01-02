@@ -1,0 +1,99 @@
+.sidebar__search {
+    display: flex;
+    align-items: center;
+    background-color: #f6f6f6;
+    height: 39px;
+    padding: 10px;
+}
+
+.sidebar__searchContainer {
+    display: flex;
+    background-color: white;
+    align-items: center;
+    width: 100%;
+    height: 35px;
+    border-radius: 20px;
+}
+
+.sidebar__searchContainer > input {
+    border: none;
+    margin-left: 10px;
+}
+
+.sidebar__header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-left: 20px;
+    border-bottom: 1px solid lightgray;
+}
+
+.sidebar__headerRight {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button.mat-mini-fab{
+    box-shadow: none;
+}
+
+.sidebar__chats {
+    flex: 1;
+    background-color: white;
+    overflow-y: scroll;
+}
+
+.sidebarChat {
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    line-height: 0.75;
+
+    padding-left: 15px;
+    cursor: pointer;
+    border-bottom: 1px solid lightgray;
+}
+
+.sidebarChat:hover {
+    background-color: #ebebeb;
+}
+
+.sidebarChat__info {
+    margin-left: 10px;
+}
+
+.sidebarChat__info > h2 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.sidebar__searchContainer > form > input {
+    flex : 1;
+    border-radius: 30px;
+    border: none;
+    padding: 10px;
+    outline: 0;
+}
+
+.sidebar__searchContainer > form > button {
+    display: none;
+}
+
+.sidebar__searchContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 32px;
+    border-top: 1px solid lightgray;
+}
+
+.sidebar__searchContainer > form {
+    flex: 1;
+    display: flex;
+}
+
+.user__profilepic {
+    margin-bottom: 20px;
+}
+

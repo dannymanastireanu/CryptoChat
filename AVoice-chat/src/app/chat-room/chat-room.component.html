@@ -1,0 +1,44 @@
+<div *ngIf="this.connectedWith == null" class="imgcontainer">
+    <img src="../../assets/site_pic/logo.png" alt="Avatar" class="avatar">
+</div>
+
+<div *ngIf="this.connectedWith != null" class="chat__header">
+    <img mat-card-avatar class="avatar" src="../../assets/users_pic/img_avatar.png">
+
+    <div class="chat__headerInfo">
+        <h3>{{this.connectedWith.fullName}}</h3>
+        <p>Last seen at ...</p>
+    </div>
+</div>
+
+<div *ngIf="this.connectedWith != null" class="chat__body" #scrollMe>
+    <div *ngFor="let message of this.messageHistory[this.connectedWith.username]">
+        <p *ngIf="message._from == this.user.username && message._type === 'text'"  class="chat__message chat__receiver">
+            {{message._body}}
+            <span class="chat__timestamp">{{message.getTime()}}</span>
+        </p>
+        <p *ngIf="message._from == this.connectedWith.username && message._type === 'text'" class="chat__message">{{message._body}}
+            <span class="chat__timestamp">{{message.getTime()}}</span>
+        </p>
+
+        <p *ngIf="message._from == this.user.username  && message._type === 'image'"  class="chat__message chat__receiver">
+            <img [src]="message._body" height="200" *ngIf="message._body">
+            <span class="chat__timestamp">{{message.getTime()}}</span>
+        </p>
+        <p *ngIf="message._from == this.connectedWith.username && message._type === 'image'" class="chat__message">
+            <img [src]="message._body" height="200" *ngIf="message._body">
+            <span class="chat__timestamp">{{message.getTime()}}</span>
+        </p>
+    </div>
+</div>
+
+<div *ngIf="this.connectedWith != null" class="chat__footer">
+    <form #f="ngForm" (ngSubmit)="sendMessage(f)">
+        <input placeholder="Type a message" type="text" [value]="messageInputText" (input)="messageInputText=$event.target.value"/>
+        <button type="button">Send</button>
+    </form>
+    <input style="display: none; margin-right: 20px" type="file" (change)="onFileSelect($event)" #hiddenfileinput
+           type="file"
+           accept=".jpg, .jpeg, .png">
+    <button (click)="hiddenfileinput.click()"  class="waves-effect waves-light btn"><i class="material-icons left">perm_media</i></button>
+</div>
